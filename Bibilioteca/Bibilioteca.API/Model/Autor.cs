@@ -13,6 +13,5 @@ namespace Bibilioteca.API.Model
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public DateTime DataNascimento{ get; set; }
-        public ICollection<Obra> Obras { get; set; }
     }
 }

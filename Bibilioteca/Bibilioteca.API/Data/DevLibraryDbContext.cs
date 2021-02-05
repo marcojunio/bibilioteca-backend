@@ -23,27 +23,11 @@ namespace Bibilioteca.API.Data
             modelBuilder.Entity<Autor>()
                 .HasKey(e => e.Id);
 
-            modelBuilder.Entity<Autor>()
-                .HasOne(e => e.Editora)
-                .WithMany(e => e.Autores)
-                .HasForeignKey(e => e.IdEditora)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Autor>()
-                .HasMany(e => e.Obras)
-                .WithMany(e => e.Autores);
-      
             modelBuilder.Entity<Editora>()
                 .HasKey(e => e.Id);
 
             modelBuilder.Entity<Obra>()
                 .HasKey(e => e.Id);
-
-            modelBuilder.Entity<Obra>()
-                .HasOne(e => e.Editora)
-                .WithMany(e => e.Obras)
-                .HasForeignKey(e => e.IdEditora)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
